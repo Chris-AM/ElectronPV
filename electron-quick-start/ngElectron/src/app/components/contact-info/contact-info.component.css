@@ -1,0 +1,41 @@
+.card {
+    margin-top: 15vh;
+}
+
+h4 {
+    padding-top: 1.5vh;
+    text-align: center;
+}
+
+.row {
+    margin-top: 3vh;
+    margin-left: 2vh;
+    size: 15vh;
+}
+
+.whatsApp {
+    margin-top: 2vh;
+    background-image: url('../../../assets/whatsapp-svgrepo-com.svg');
+    background-repeat: no-repeat;
+    height: 5rem;
+    background-size: 14% 100%;
+    z-index: 100;
+}
+
+.mail {
+    margin-top: 5vh;
+    background-image: url('../../../assets/clipart2410421.png');
+    background-repeat: no-repeat;
+    height: 5rem;
+    background-size: 15% 100%;
+    z-index: 100;
+}
+
+h5 {
+    margin-top: 3vh;
+    margin-left: 12vh;
+}
+
+span {
+    margin-left: 1.5rem;
+}
