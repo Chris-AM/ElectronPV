@@ -1,16 +1,18 @@
 import expres, { Application } from 'express';
 import indexRoutes from './index/indexroutes';
-import sqlRoutes from './index/sqlRoutes';
+
 import morgan from 'morgan';
 import cors from 'cors';
 import e from 'cors';
+
+//tables routes
+import productRoutes from './products/productRoutes';
 class Server {
 
   public app: Application;
 
   constructor() {
     //here I execute al these methods
-
     this.app = expres();
     this.config();
     this.routes();
@@ -29,7 +31,7 @@ class Server {
 
   routes(): void {
     this.app.use('/', indexRoutes);
-    this.app.use('/api/store', sqlRoutes);
+    this.app.use('/api/product', productRoutes);
   }
 
   start(): void {
