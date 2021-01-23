@@ -70,3 +70,7 @@ ALTER TABLE venta
 ADD COLUMN fk_rut_cliente INT NOT NULL;
 ALTER TABLE venta
 ADD FOREIGN KEY (fk_rut_cliente) REFERENCES cliente (rut_cliente);
+ALTER TABLE cierre
+ADD COLUMN id_cierre INT;
+ALTER TABLE cierre
+MODIFY id_cierre INT(11) NOT NULL AUTO_INCREMENT;
