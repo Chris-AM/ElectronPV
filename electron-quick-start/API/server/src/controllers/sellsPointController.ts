@@ -1,13 +1,15 @@
 import { Request, Response } from 'express';
+import POOL from '../database';
 
-export class SellsPointController {
+
+ class SellsPointController {
 
   constructor() {
   }
-
-  public index(req: Request, res: Response) {
-    res.send(
-      'testing'
-    )
+   public index(req: Request, res: Response) {
+     POOL.query('DESCRIBE producto');
+     res.json('SellsPoint')
   }
 }
+const sellsPointController = new SellsPointController();
+export default sellsPointController;
