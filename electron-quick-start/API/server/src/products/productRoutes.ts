@@ -11,8 +11,11 @@ class ProductRoutes{
 
   config() {
    
-    this.router.get('/', productController.productIndex);
+    this.router.get('/', productController.productList);
+    this.router.get('/:codigo_barras', productController.getProductByBC);
     this.router.post('/', productController.createProduct);
+    this.router.put('/:codigo_barras', productController.updateProduct);
+    this.router.delete('/:codigo_barras', productController.deleteProduct);
   }
 }
 
