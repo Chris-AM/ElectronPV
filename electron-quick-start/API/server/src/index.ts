@@ -7,6 +7,11 @@ import e from 'cors';
 
 //tables routes
 import productRoutes from './products/productRoutes';
+import clientRoutes from './client/clientRoutes';
+import closeRoutes from './close/closeRoutes';
+import sellRoutes from './sell/sellRoutes';
+import storeRoutes from './store/storeRoutes';
+import ticketRoutes from './ticket/ticketRoutes'
 class Server {
 
   public app: Application;
@@ -32,6 +37,11 @@ class Server {
   routes(): void {
     this.app.use('/', indexRoutes);
     this.app.use('/api/product', productRoutes);
+    this.app.use('/api/client', clientRoutes);
+    this.app.use('/api/close', closeRoutes);
+    this.app.use('/api/sell', sellRoutes);
+    this.app.use('/api/store', storeRoutes);
+    this.app.use('/api/ticket', ticketRoutes);    
   }
 
   start(): void {
