@@ -1,8 +1,6 @@
 import { Router } from 'express';
-import { iController } from '../controllers/indexController';
-import sellsPointController from '../controllers/sellsPointController';
 
-class IndexRoutes {
+class SqlRoutes{
 
   public router: Router = Router();
 
@@ -14,9 +12,9 @@ class IndexRoutes {
     //getMethod(expects 1 pameter at least)
     //send(property) Response<any, number>.send: Send<any, Response<any, number>>
     /*what i'm doing */
-    this.router.get('/', iController.index)
+    //this.router.get('/', sellsPointController.index)
   }
 }
 
-const indexRoutes = new IndexRoutes();
-export default indexRoutes.router;
+const sqlRoutes = new SqlRoutes();
+export default sqlRoutes.router;

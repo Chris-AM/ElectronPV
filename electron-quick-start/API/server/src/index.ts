@@ -1,6 +1,6 @@
 import expres, { Application } from 'express';
-import indexRoutes from './routes/indexroutes';
-import sqlRoutes from './routes/sqlRoutes';
+import indexRoutes from './index/indexroutes';
+import sqlRoutes from './index/sqlRoutes';
 import morgan from 'morgan';
 import cors from 'cors';
 import e from 'cors';
