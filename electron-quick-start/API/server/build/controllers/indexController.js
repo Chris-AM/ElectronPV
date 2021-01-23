@@ -5,7 +5,7 @@ class IndexController {
     constructor() {
     }
     index(req, res) {
-        res.send('testing');
+        res.json({ text: 'The API is in /api/store' });
     }
 }
 exports.iController = new IndexController();
