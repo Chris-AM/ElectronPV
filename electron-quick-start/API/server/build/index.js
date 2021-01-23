@@ -4,10 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const indexroutes_1 = __importDefault(require("./routes/indexroutes"));
-const sqlRoutes_1 = __importDefault(require("./routes/sqlRoutes"));
+const indexroutes_1 = __importDefault(require("./index/indexroutes"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
+//tables routes
+const productRoutes_1 = __importDefault(require("./products/productRoutes"));
 class Server {
     constructor() {
         //here I execute al these methods
@@ -27,7 +28,7 @@ class Server {
     }
     routes() {
         this.app.use('/', indexroutes_1.default);
-        this.app.use('/api/store', sqlRoutes_1.default);
+        this.app.use('/api/product', productRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

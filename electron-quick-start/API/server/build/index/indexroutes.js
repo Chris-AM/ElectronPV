@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-class SqlRoutes {
+const indexController_1 = require("./indexController");
+class IndexRoutes {
     constructor() {
         this.router = express_1.Router();
         this.config();
@@ -10,8 +11,8 @@ class SqlRoutes {
         //getMethod(expects 1 pameter at least)
         //send(property) Response<any, number>.send: Send<any, Response<any, number>>
         /*what i'm doing */
-        //this.router.get('/', sellsPointController.index)
+        this.router.get('/', indexController_1.iController.index);
     }
 }
-const sqlRoutes = new SqlRoutes();
-exports.default = sqlRoutes.router;
+const indexRoutes = new IndexRoutes();
+exports.default = indexRoutes.router;
