@@ -6,8 +6,8 @@ import { Request, Response } from 'express';
   }
 
   public index(req: Request, res: Response) {
-    res.send(
-      'testing'
+    res.json(
+     { text: 'The API is in /api/store'}
     )
   }
 }
