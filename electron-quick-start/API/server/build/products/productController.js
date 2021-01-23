@@ -8,7 +8,7 @@ class ProductController {
     constructor() {
     }
     productIndex(req, res) {
-        database_1.default.query('Describe Producto');
+        database_1.default.query('DESCRIBE producto');
         res.json({ text: 'this is the product table' });
     }
     createProduct(req, res) {

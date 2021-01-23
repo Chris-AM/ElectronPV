@@ -10,11 +10,9 @@ class ProductRoutes{
   }
 
   config() {
-    //getMethod(expects 1 pameter at least)
-    //send(property) Response<any, number>.send: Send<any, Response<any, number>>
-    /*what i'm doing */
+   
     this.router.get('/', productController.productIndex);
-    this.router.get('/', productController.createProduct);
+    this.router.post('/', productController.createProduct);
   }
 }
 

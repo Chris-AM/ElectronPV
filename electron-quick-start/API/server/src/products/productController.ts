@@ -7,7 +7,7 @@ class ProductController{
   }
 
   public productIndex(req: Request, res: Response) {
-    POOL.query('Describe Producto');
+    POOL.query('DESCRIBE producto');
     res.json({ text: 'this is the product table' });
   }
 
