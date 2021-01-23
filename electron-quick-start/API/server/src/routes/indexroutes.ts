@@ -1,7 +1,8 @@
 import { Router } from 'express';
-import {iController} from '../controllers/indexController';
+import { iController } from '../controllers/indexController';
+import sellsPointController from '../controllers/sellsPointController';
 
-class IndexRoutes{
+class IndexRoutes {
 
   public router: Router = Router();
 
