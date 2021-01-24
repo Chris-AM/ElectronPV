@@ -12,6 +12,13 @@ import { ContactInfoComponent } from './components/contact-info/contact-info.com
 import { ClientComponent } from './components/client/client.component';
 import { CloseComponent } from './components/close/close.component';
 
+//services
+import { ClientService } from "./services/clients/client.service";
+import { CloseService } from "./services/closes/close.service";
+import { ProductService } from "./services/products/product.service";
+import { SellService } from "./services/sells/sell.service";
+import { StoreService } from "./services/store/store.service";
+import { TicketService } from "./services/tickets/ticket.service";
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +35,14 @@ import { CloseComponent } from './components/close/close.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    ClientService,
+    CloseService,
+    ProductService,
+    SellService,
+    StoreService,
+    TicketService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
