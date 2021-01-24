@@ -1,13 +1,11 @@
-import mysql from 'mysql';
+import mysql from 'promise-mysql';
 import keys from './keys';
 
 //createPool expects a config argument
 const POOL = mysql.createPool(keys.database);
 
-POOL.getConnection((err, connection) => {
-  if (err) throw err;
-  connection.release();
-  console.info('DB is connected')
+POOL.getConnection().then(connection => {
+  POOL.releaseConnection(connection);
 });
 
 export default POOL;
