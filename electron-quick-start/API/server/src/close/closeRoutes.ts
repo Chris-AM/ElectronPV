@@ -11,7 +11,8 @@ class CloseRoutes{
 
   config() {
    
-    this.router.get('/', closeController.closeIndex);
+    this.router.get('/', closeController.closesList);
+    this.router.get('/:id_cierre', closeController.getCloseById);
     this.router.post('/', closeController.createClose);
   }
 }
