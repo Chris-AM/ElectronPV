@@ -11,8 +11,11 @@ class ClientRoutes{
 
   config() {
    
-    this.router.get('/', clientController.clientIndex);
+    this.router.get('/', clientController.clientList);
+    this.router.get('/:rut_cliente', clientController.getClientById);
     this.router.post('/', clientController.createClient);
+    this.router.put('/:rut_cliente', clientController.updateClient);
+    this.router.delete('/:rut_cliente', clientController.deleteClient);
   }
 }
 
