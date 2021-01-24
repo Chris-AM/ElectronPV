@@ -1,17 +1,14 @@
 import { Response, Request, json } from 'express';
 import POOL from '../database';
 
-class ProductController{
+class ProductController {
   constructor() {
-    
+
   }
 
   public async productList(req: Request, res: Response): Promise<void> {
-    const PRODUCTS = await POOL.query('SELECT * FROM producto',
-      function (err, result, fields) {
-      if (err) throw err;
-      res.json(result);
-    });
+    const PRODUCTS = await POOL.query('SELECT * FROM producto');
+    res.json(PRODUCTS);
   }
 
   public async getProductByBC(req: Request, res: Response): Promise<any> {
@@ -19,19 +16,17 @@ class ProductController{
     properties of an array or object to variables using syntax that looks similar 
     to array or object literals*/
     const { codigo_barras } = req.params;
-    const PRODUCT = await POOL.query('SELECT * FROM producto WHERE codigo_barras = ?',
-      [codigo_barras],
-      function (err, result, fields) {
-      if (err) throw err;
-      res.json(result);
-    });
-    res.status(404).json({text:"The product doesn't exist"})
+    const PRODUCT = await POOL.query("SELECT * FROM producto WHERE codigo_barras = ?", [codigo_barras])
+    console.log(PRODUCT);
+    if (PRODUCT.length > 0) {
+      return res.json(PRODUCT[0]);
+    }
+    res.status(404).json({ text: "The product doesn't exist" })
   }
 
   public async createProduct(req: Request, res: Response): Promise<void> {
-   await POOL.query('INSERT INTO producto SET ?', [req.body]);
-    res.json({ message: 'product saved' }); 
-    
+    await POOL.query('INSERT INTO producto SET ?', [req.body]);
+    res.json({ message: 'product saved' });
   }
 
   public async updateProduct(req: Request, res: Response): Promise<void> {

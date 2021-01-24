@@ -18,11 +18,8 @@ class ProductController {
     }
     productList(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const PRODUCTS = yield database_1.default.query('SELECT * FROM producto', function (err, result, fields) {
-                if (err)
-                    throw err;
-                res.json(result);
-            });
+            const PRODUCTS = yield database_1.default.query('SELECT * FROM producto');
+            res.json(PRODUCTS);
         });
     }
     getProductByBC(req, res) {
@@ -31,11 +28,11 @@ class ProductController {
             properties of an array or object to variables using syntax that looks similar
             to array or object literals*/
             const { codigo_barras } = req.params;
-            const PRODUCT = yield database_1.default.query('SELECT * FROM producto WHERE codigo_barras = ?', [codigo_barras], function (err, result, fields) {
-                if (err)
-                    throw err;
-                res.json(result);
-            });
+            const PRODUCT = yield database_1.default.query("SELECT * FROM producto WHERE codigo_barras = ?", [codigo_barras]);
+            console.log(PRODUCT);
+            if (PRODUCT.length > 0) {
+                return res.json(PRODUCT[0]);
+            }
             res.status(404).json({ text: "The product doesn't exist" });
         });
     }
