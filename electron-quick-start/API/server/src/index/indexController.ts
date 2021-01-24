@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-class IndexController {
+ class IndexController {
 
   constructor() {
   }
