@@ -11,8 +11,11 @@ class TicketRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', ticketController_1.default.ticketIndex);
-        this.router.post('/', ticketController_1.default.createticket);
+        this.router.get('/', ticketController_1.default.ticketList);
+        this.router.get('/:numero_folio', ticketController_1.default.getTicketByTN);
+        this.router.post('/', ticketController_1.default.createTicket);
+        this.router.put('/:numero_folio', ticketController_1.default.updateTicket);
+        this.router.delete('/:numero_folio', ticketController_1.default.deleteTicket);
     }
 }
 const ticketRoutes = new TicketRoutes();
