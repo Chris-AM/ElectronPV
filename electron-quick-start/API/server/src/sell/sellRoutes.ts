@@ -11,8 +11,11 @@ class SellRoutes{
 
   config() {
    
-    this.router.get('/', sellController.sellIndex);
+    this.router.get('/', sellController.sellsList);
+    this.router.get('/:idventa', sellController.getSellById);
     this.router.post('/', sellController.createSell);
+    this.router.put('/:idventa', sellController.updateSell);
+    this.router.delete('/:idventa', sellController.deleteSell);
   }
 }
 

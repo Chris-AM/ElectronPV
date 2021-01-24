@@ -11,8 +11,11 @@ class SellRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', sellController_1.default.sellIndex);
+        this.router.get('/', sellController_1.default.sellsList);
+        this.router.get('/:idventa', sellController_1.default.getSellById);
         this.router.post('/', sellController_1.default.createSell);
+        this.router.put('/:idventa', sellController_1.default.updateSell);
+        this.router.delete('/:idventa', sellController_1.default.deleteSell);
     }
 }
 const sellRoutes = new SellRoutes();
