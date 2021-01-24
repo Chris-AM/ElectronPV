@@ -3,6 +3,8 @@ export const MESSAGES = {
     ELECTRON_PV: 'Electron PV',
     PRODUCTS: 'Agregar Productos',
     SELLS: 'Crear venta',
+    CLIENTS: 'Administrar Clientes',
+    CLOSE: 'Cierre Día',
     SEARCH: 'Buscar Productos',
     SEARCH_BUTTON: 'buscar'
   },
