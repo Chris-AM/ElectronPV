@@ -19,6 +19,8 @@ import { ProductService } from "./services/products/product.service";
 import { SellService } from "./services/sells/sell.service";
 import { StoreService } from "./services/store/store.service";
 import { TicketService } from "./services/tickets/ticket.service";
+
+import { HttpClientModule } from "@angular/common/http";
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,8 @@ import { TicketService } from "./services/tickets/ticket.service";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     ClientService,
