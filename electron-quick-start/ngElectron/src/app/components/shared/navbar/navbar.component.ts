@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import _ from 'lodash';
-import { MESSAGES } from '../constants/messages';
+import { MESSAGES } from '../../../constants/messages';
 
 @Component({
   selector: 'app-navbar',
