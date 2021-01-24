@@ -11,8 +11,11 @@ class StoreRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', storeController_1.default.storeIndex);
+        this.router.get('/', storeController_1.default.getStore);
+        this.router.get('/:rut', storeController_1.default.getStoreByID);
         this.router.post('/', storeController_1.default.createStore);
+        this.router.put('/:rut', storeController_1.default.updateStore);
+        this.router.delete('/:rut', storeController_1.default.deleteStore);
     }
 }
 const storeRoutes = new StoreRoutes();

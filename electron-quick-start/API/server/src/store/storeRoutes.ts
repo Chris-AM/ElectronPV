@@ -10,8 +10,11 @@ class StoreRoutes{
   }
 
   config() {
-    this.router.get('/', storeController.storeIndex);
+    this.router.get('/', storeController.getStore);
+    this.router.get('/:rut', storeController.getStoreByID);
     this.router.post('/', storeController.createStore);
+    this.router.put('/:rut', storeController.updateStore);
+    this.router.delete('/:rut', storeController.deleteStore);
   }
 }
 
