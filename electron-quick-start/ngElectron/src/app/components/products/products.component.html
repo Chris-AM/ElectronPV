@@ -1,1 +1,13 @@
-<p>products works!</p>
+<div class="row">
+    <div class="col-2 mt-3 ml-4">
+        <div class="card border-secondary mb-3" style="max-width: 18rem;" *ngFor="let product of products">
+            <div class="card-header text-center">
+                {{product.nombre_producto}}
+            </div>
+            <div class="card-body text-secondary text-center">
+                <h5 class="card-title"> {{product.codigo_barras}} </h5>
+                <p class="card-text">{{product.precio | currency:'CLP':'symbol-narrow'}}</p>
+            </div>
+        </div>
+    </div>
+</div>
