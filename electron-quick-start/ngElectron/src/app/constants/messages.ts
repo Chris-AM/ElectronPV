@@ -1,7 +1,7 @@
 export const MESSAGES = {
   NAVBAR: {
     ELECTRON_PV: 'Electron PV',
-    PRODUCTS: 'Agregar Productos',
+    PRODUCTS: 'Administrar Productos',
     SELLS: 'Crear venta',
     CLIENTS: 'Administrar Clientes',
     CLOSE: 'Cierre Día',
